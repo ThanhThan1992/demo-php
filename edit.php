@@ -1,3 +1,4 @@
+<?php echo '<link href="view.css" rel="stylesheet" type="text/css" />'; ?>
 <?php
 $id = $_GET["id"];
 $db = pg_connect("host=localhost port=5432 dbname=TEST user=postgres password=root"); 
@@ -21,11 +22,28 @@ if(empty($_POST))
  }
 
 ?>
-
-<form name="insert" method="POST" action="">  
-    <li>ID:</li><li><input type="text" name="id" readonly="true"value="<?php echo $item[0]?>"/></li>  
-<li>Name:</li><li><input type="text" name="name"  value="<?php echo $item[1]?>"/></li>  
-<li>Age:</li><li><input type="text" name="age"  value="<?php echo $item[2]?>"/></li>  
-<li>Porn:</li><li><input type="text" name="porn"  value="<?php echo $item[3]?>"/></li>  
-<li><input type="submit" value="Update" name="Update"/></li>  
-</form> 
+<html>
+    <body align="center">
+        <div id="main">
+            <form name = "insert" method = "POST"  > 
+                <table align="center">
+                    <tr>
+                        <td>ID:</td><td><input type   = "text" name   = "id" value = "<?php echo $item[0]?>" /></td> 
+                    </tr>
+                    <tr>
+                        <td>Name:</td><td><input type = "text" name   = "name" value = "<?php echo $item[1]?>" /></td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td><td><input type  = "text" name   = "age" value = "<?php echo $item[2]?>" /></td> 
+                    </tr>
+                    <tr>
+                        <td>Porn:</td><td><input type = "text" name   = "porn" value = "<?php echo $item[3]?>" /></td>  
+                    </tr>
+                    <tr>
+                        <td></td><td><input type = "submit"value="Update" name="Update" /></td> 
+                    </tr>
+                </table>
+            </form> 
+        </div>
+    </body>
+</html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+    <?php echo '<link href="view.css" rel="stylesheet" type="text/css" />'; ?>
     <?php  
         $db = pg_connect("host=localhost port=5432 dbname=TEST user=postgres password=root");
         $query = "SELECT * FROM student";
         $result = pg_query($query);
     ?>
-    <body>
-        <table border="1" cellspacing="2" cellpadding="2">
+    <body align="center">
+        <div id="main" >
+            <table align="center" border="1" cellspacing="2" cellpadding="2">
             <tr>
             <th><font face="Arial, Helvetica, sans-serif">ID</font></th>
             <th><font face="Arial, Helvetica, sans-serif">Name</font></th>
@@ -36,5 +38,7 @@
             <?php endfor; ?>
             </table>
         <a href="insert.php">Insert</a>
+        <a href="login.php">lOGIN</a>
+        </div>
     </body>
 </html>

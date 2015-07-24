@@ -1,4 +1,4 @@
-
+<?php echo '<link href="view.css" rel="stylesheet" type="text/css" />'; ?>
 <?php 
     $db = pg_connect("host=localhost port=5432 dbname=TEST user=postgres password=root"); 
     function  checkID()
@@ -42,15 +42,29 @@
     }
 ?>  
 <html>
-    <body>
-        <ul>  
-            <form name = "insert" method = "POST" >  
-                <li>ID:</li><li><input type   = "text" name   = "id" /></li>  
-                <li>Name:</li><li><input type = "text" name = "name" /></li>  
-                <li>Age:</li><li><input type  = "text" name  = "age" /></li>  
-                <li>Porn:</li><li><input type = "text" name = "porn" /></li>  
-                <li><input type = "submit" name="submit" /></li>  
+    <body align="center">
+        <div id="main">
+        
+            <form name = "insert" method = "POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" > 
+                <table align="center">
+                    <tr>
+                        <td>ID:</td><td><input type   = "text" name   = "id" /></td> 
+                    </tr>
+                    <tr>
+                        <td>Name:</td><td><input type = "text" name   = "name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td><td><input type  = "text" name   = "age" /></td> 
+                    </tr>
+                    <tr>
+                        <td>Porn:</td><td><input type = "text" name   = "porn" /></td>  
+                    </tr>
+                    <tr>
+                        <td></td><td><input type = "submit" name="submit" /></td> 
+                    </tr>
+                </table>
             </form>  
-        </ul>  
+        
+        </div>
      </body>
 </html>
